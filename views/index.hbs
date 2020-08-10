@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<h2>Users</h2>
+
+{{#if users.length}}
+
+    <ul>
+        {{#each users}}
+            <li>
+                <span>{{firstName}} {{lastName}}</span>
+            </li>
+        {{/each}}
+    </ul>
+
+{{else}}
+    <p>No users</p>
+{{/if}}
+<hr>
+<h2>Add user</h2>
+<form action="/" method="POST">
+    <label for="firstName">First name:</label><br>
+    <input type="text" id="firstName" name="firstName"><br>
+    <label for="lastName">Last name:</label><br>
+    <input type="text" id="lastName" name="lastName"><br><br>
+    <input type="submit" value="Create">
+</form>
+</body>
+</html>
